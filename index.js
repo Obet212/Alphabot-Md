@@ -1553,7 +1553,7 @@ break
                 if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
                 alpha.sendMessage(from, { text : q ? q : '' , mentions: participants.map(a => a.id)}, {quoted: fkontak})
             break
-			case 'banuser': case 'banned': {
+			case 'banuser': case 'banned': case 'ban': {
 				if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 if (!m.quoted && !text) return reply(lang.NoTagBan(prefix, command))
 				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
